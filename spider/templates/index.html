@@ -3,11 +3,25 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
-	<title>fullPage.js One Page Scroll Sites</title>
+	<title>code</title>
 	{% include 'common.html' %}
 
+	<script type="text/javascript" >
+		$(function(){
+
+		})
+		function code(){
+		       $("#output").find("canvas").remove();
+		       var value = $("#name").val();
+		       if(value != undefined){
+		        $("#output").find("canvas").remove();
+		        jQuery('#output').qrcode(value);
+		       }
+		   }
+	</script>
 </head>
 <body>
-{{ string }}
+<div id="output"></div>
+<input type="text" id="name"><input type="button" id="button" onclick="code()" value="生成">
 </body>
 </html>
