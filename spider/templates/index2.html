@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spider Index</title>
+	{% include 'common.html' %}
+	<script type='text/javascript'>
+        $(function(){
+
+  var interval = setInterval(increment,100);
+  var current = 0;
+
+  function increment(){
+    current++;
+    $('#counter').html(current+'%');
+    if(current == 100) {
+       window.location.href='hello.html';
+    }
+  }
+
+  $('.load-bar').mouseover(function(){
+       clearInterval(interval);
+             }).mouseout(function(){
+             interval = setInterval(increment,100);
+    });
+});
+	</script>
+</head>
+<body>
+<div class="wrapper">
+	<div class="load-bar">
+		<div class="load-bar-inner" data-loading="0"> <span id="counter"></span> </div>
+	</div>
+	<h1>加载</h1>
+	<p>请等待... </p>
+</div>
+</body>
+</html>
